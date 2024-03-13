@@ -1,0 +1,104 @@
+#BANCO DE DADOS: ATIVIDADE DE CRIAÇÃO DE UMA AGENDA DE CONTATOS
+#RA: G8419F0
+
+CREATE DATABASE agenda;
+\c agenda;
+
+CREATE TABLE contato(
+id VARCHAR(100) NOT NULL,
+nome VARCHAR(200) NOT NULL,
+telefone VARCHAR(11) NOT NULL,
+grupo VARCHAR(200),
+PRIMARY KEY(id)
+);
+
+\dt
+
+
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('1','Giovanna','16093815118','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('2','Carlos','123456789','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('3','Maria','987654321','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('4','Lucas','555555555','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('5','Ana','999888777','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('6','Pedro','111222333','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('7','Camila','444555666','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('8','Fernando','777888999','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('9','Mariana','123987456','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('10','Ricardo','987654321','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('11','Isabela','654123789','Escola');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('12','Gabriel','456789123','Escola');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('13','Larissa','789123456','Escola');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('14','João','321654987','Escola');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('15','Amanda','987654321','Escola');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('16','Thiago','159357852','Amigo');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('17','Lívia','357951684','Amigo');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('18','Eduardo','456789123','Amigo');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('19','Vanessa','987654321','Amigo');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('20','Alex','789456123','Amigo');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('21','Bianca','987654321','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('22','Vinícius','123987456','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('23','Laura','456321789','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('24','Diego','987654321','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('25','Carolina','789456123','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('26','Felipe','456789123','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('27','Tatiane','789123456','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('28','Luciana','321654987','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('29','Roberto','987654321','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('30','Fernanda','456321789','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('31','Hugo','987654321','Escola');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('32','Juliana','789456123','Escola');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('33','Carlos','456789123','Escola');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('34','Mariana','789123456','Escola');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('35','José','321654987','Escola');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('36','Cristina','987654321','Amigo');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('37','Rafael','789456123','Amigo');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('38','Daniela','456789123','Amigo');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('39','Tiago','789123456','Amigo');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('40','Carla','321654987','Amigo');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('41','Leonardo','987654321','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('42','Mônica','789456123','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('43','Guilherme','456789123','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('44','Patrícia','789123456','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('45','Ricardo','321654987','Familiar');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('46','Marcela','987654321','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('47','Rodrigo','789456123','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('48','Lucas','456789123','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('49','Tânia','789123456','Trabalho');
+INSERT INTO contato(id, nome, telefone, grupo) VALUES ('50','Renato','321654987','Trabalho');
+
+\d contato
+
+SELECT * FROM contato;
+SELECT * FROM id, nome, grupo FROM contato;
+SELECT * FROM telefone, nome, grupo FROM contato;
+SELECT * FROM nome FROM contato;
+
+UPDATE contato SET nome='Vitor' WHERE id='48';
+UPDATE contato SET telefone='3256987412' WHERE id='35';
+UPDATE contato SET grupo='rpg' WHERE telefone='321654987';
+UPDATE contato SET nome='Marcelo', telefone='2437510598', grupo='Tenis' WHERE id='16';
+UPDATE contato SET grupo='Basquete' WHERE id='26';
+UPDATE contato SET nome='Sirleide' WHERE id='41';
+UPDATE contato SET telefone='6874102559', nome='Adolfo' WHERE id='10';
+UPDATE contato SET nome='Daniela', grupo='Faculdade' WHERE id='5';
+UPDATE contato SET nome='Denilson', grupo='Volei', telefone='4111452387';
+UPDATE contato SET nome='Henrique' WHERE id='50';
+
+DELETE FROM contato WHERE id='11';
+DELETE FROM contato WHERE id='8';
+DELETE FROM contato WHERE telefone='789456123';
+DELETE FROM contato WHERE grupo='volei';
+DELETE FROM contato WHERE nome='Tânia';
+DELETE FROM contato WHERE telefone='987654321';
+
+
+TRUNCATE TABLE contato;
+
+ALTER TABLE contato ADD favorito BOOLEAN;
+
+INSERT INTO contato(id, nome, telefone, grupo, favorito) VALUES ('51', 'João', '4130256987', 'Jogos', 'n');
+INSERT INTO contato(id, nome, telefone, grupo, favorito) VALUES ('53', 'Maria', '4135419987', 'Dança', 's');
+UPDATE contato SET favorito='s' WHERE id='9';
+UPDATE contato SET favorito='n' WHERE id='6';
+
+
