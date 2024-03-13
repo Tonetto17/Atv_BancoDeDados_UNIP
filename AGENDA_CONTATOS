@@ -91,9 +91,6 @@ DELETE FROM contato WHERE grupo='volei';
 DELETE FROM contato WHERE nome='Tânia';
 DELETE FROM contato WHERE telefone='987654321';
 
-
-TRUNCATE TABLE contato;
-
 ALTER TABLE contato ADD favorito BOOLEAN;
 
 INSERT INTO contato(id, nome, telefone, grupo, favorito) VALUES ('51', 'João', '4130256987', 'Jogos', 'n');
